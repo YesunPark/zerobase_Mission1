@@ -11,7 +11,7 @@
 	
 	<a href="index.jsp" style="padding: 0px 6px 0px 3px; border-right:1px solid black;">홈</a>
 	<a href="./jsp/history.jsp" style="padding: 0px 6px 0px 3px; border-right:1px solid black;">위치 히스토리 목록</a>
-	<a href="./jsp/nearbyWifi.jsp" style="padding: 0px 6px 0px 3px; ">Open API 와이파이 정보 가져오기</a>
+	<a href="./jsp/wifi.jsp" style="padding: 0px 6px 0px 3px; ">Open API 와이파이 정보 가져오기</a>
 	<br/>
 	<br/>
 	
