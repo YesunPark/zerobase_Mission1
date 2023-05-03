@@ -3,8 +3,6 @@ import java.sql.*;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
-
-
 // 데이터베이스 접근 클래스 
 public class HistoryDAO {
 	private Connection conn = null;
@@ -16,7 +14,7 @@ public class HistoryDAO {
 	}
 
 	// 내가 조회한 위치 히스토리 저장
-	public int saveLocationHistory() {
+	public int saveLocationHistory(double xCoordinateValue, double yCoordinateValue) {
 		String dbURL = "jdbc:mariadb://localhost:3306/mission1";
 		String dbID = "mission1user";
 		String dbPW = "mission1";
@@ -27,8 +25,6 @@ public class HistoryDAO {
 			e.printStackTrace();
 		}
 
-		double xCoordinateValue = 4.11111;
-		double yCoordinateValue = 4.22222;
 		String lookupDate = (LocalDateTime.now()).format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
 
 		try {
@@ -44,9 +40,9 @@ public class HistoryDAO {
 
 			int affectedRows = pstmt.executeUpdate();
 			if (affectedRows > 0) {
-				return 1; // 저장 성공 
+				return 1; // 저장 성공
 			} else {
-				return -1; // 저장 실패 
+				return -1; // 저장 실패
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -76,7 +72,7 @@ public class HistoryDAO {
 			}
 		}
 
-		return -2; // 데이터베이스 오류 
+		return -2; // 데이터베이스 오류
 	}
 
 	// 테스트용 메서드
@@ -140,7 +136,7 @@ public class HistoryDAO {
 	public static void main(String[] args) {
 		HistoryDAO dbTest = new HistoryDAO();
 //		System.out.println(dbTest.selectTest());
-		System.out.println(dbTest.saveLocationHistory());
+		System.out.println(dbTest.saveLocationHistory(4.1111, 4.2222));
 
 	}
 }
