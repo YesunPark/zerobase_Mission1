@@ -1,3 +1,4 @@
+package location;
 import java.util.Date;
 // 위치 히스토리를 담는 클래스 
 public class HistoryDTO {
